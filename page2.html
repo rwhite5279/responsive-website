@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Responsive Template</title>
+        <meta name="resource-type" content="document" />
+        <meta name="author" content="richard white" />
+        <meta name="description" content="Responsive Template Example for new Websites" />
+        <meta name="keywords" content="richard white, responsive template" />
+        <meta name="distribution" content="global" />
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <style type="text/css"><!-- @import url("responsive_styles.css"); --></style>
+        
+        
+        <script src="jquery-1.11.0-min.js"></script> <!-- local copy of jquery for testing -->
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        
+        <script type="text/javascript">      <!-- This script animates the vertical burger menu  -->
+            $(document).ready(function() { 
+                $('div.view').hide(); 
+                $('div.slide').click(function() {
+                    $(this).next('div.view').slideToggle(100); 
+                    return false; 
+                }); 
+            }); 
+        </script>
+    </head>
+    <body>
+        <!-- ########################### HEADER, including RESPONSIVE VERTICAL MENU ################### -->
+        <div id="header">
+            <div class="container">     
+                <h1>Responsive Template</h1>
+                <div id="vertmenu">             <!--Not shown in Desktop mode-->
+                    <div id="hamburger" class="slide">
+                        <a href="#">Menu &#9776;</a> <!--The UTF-8 "burger" symbol -->
+                    </div>
+                    <div class="view">
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li id="here">Our Story</li>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div><!--view-->
+                </div><!--vertmenu-->
+            </div><!--container-->
+        </div> <!--header-->
+        <!-- ########################### HORIZONTAL MENU, HIDDEN IN MOBILE MODE ################### -->
+        <div id="horzmenu">
+            <div class="container">
+                <ul><li><a href="index.html">Home</a></li><li id="here">Our Story</li><li><a href="#">About</a></li><li><a href="#">Contact</a></li></ul>
+            </div><!--container-->
+        </div><!--horzmenu-->
+        <!-- ########################### CONTENT, including RESPONSIVE BOXES ################### -->
+        <div id="contentwrapper">
+            <div class="container">
+                <!-- ###### Content 1, placed first vertically (in mobile mode), or on the left (in desktop mode) -->
+                <h1>Page 2</h1>
+                <div id="content1" style="width: 99%">		
+                    <p>This second page is just demonstrating that the format can be easily altered with local alterations to the css markup.</p>
+                    <p>In this case, a markup of</p>
+                    <pre>style = "width: 99%"</pre>
+                    <p>was added to the <b>content1</b> div. </p>
+                    
+                </div>
+            </div><!--container-->
+        </div><!--contentwrapper-->
+        <!-- ############################################# FOOTER ############################## -->
+        <div id="footer">
+            <div class="container">
+                <p>&copy; 2015, <a href="mailto:yourname@you.com">Your Name</a> |
+                  <a href="#">Terms of Service</a></p>
+            </div><!--container-->
+        </div><!--footer-->
+    </body>
+</html>
