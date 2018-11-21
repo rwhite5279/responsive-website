@@ -2,62 +2,58 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
-        <title>Responsive Template</title>
+        <title>Responsive Design</title>
         <meta name="resource-type" content="document" />
         <meta name="author" content="richard white" />
-        <meta name="description" content="Responsive Template Example for new Websites" />
-        <meta name="keywords" content="richard white, responsive template" />
+        <meta name="description" content="template for Responsive Design Webpage" />
+        <meta name="keywords" content="richard white, responsive design" />
         <meta name="distribution" content="global" />
         <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        
-        <style type="text/css"><!-- @import url("responsive_styles.css"); --></style>
-        
-        
-        <script src="jquery-1.11.0-min.js"></script> <!-- local copy of jquery for testing -->
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-        
-        <script type="text/javascript">      <!-- This script animates the vertical burger menu  -->
-            $(document).ready(function() { 
-                $('div.view').hide(); 
-                $('div.slide').click(function() {
-                    $(this).next('div.view').slideToggle(100); 
-                    return false; 
-                }); 
-            }); 
-        </script>
+        <link rel="stylesheet" type="text/css" href="responsive_styles.css">
+    	<script src="./showHide.js" type="text/javascript"></script>
     </head>
     <body>
-        <!-- ########################### HEADER, including RESPONSIVE VERTICAL MENU ################### -->
+    
+        <!-- ##################### HEADER ##################### -->
+        
         <div id="header">
-            <div class="container">     
-                <h1>Responsive Template</h1>
-                <div id="vertmenu">             <!--Not shown in Desktop mode-->
-                    <div id="hamburger" class="slide">
-                        <a href="#">Menu &#9776;</a> <!--The UTF-8 "burger" symbol -->
-                    </div>
-                    <div class="view">
-                        <ul>
-                            <li id="here">Home</li>
-                            <li><a href="page2.html">Our Story</a></li>
-                            <li><a href="#">About</a></li>
-                            <li><a href="#">Contact</a></li>
-                        </ul>
-                    </div><!--view-->
-                </div><!--vertmenu-->
-            </div><!--container-->
+            <div class="container">
+                <h1>This is a website</h1>
+            </div>
         </div> <!--header-->
-        <!-- ########################### HORIZONTAL MENU, HIDDEN IN MOBILE MODE ################### -->
-        <div id="horzmenu">
+        
+        
+        <!-- Show the mobile menu button by default, 
+             but @media style hides it in desktop-width browsers -->
+        <div id="mobile_menu_button"><a href="#" onclick="toggle('menu');">Menu &#9776;</a></div>
+
+        <!-- In default, mobile setting, this section is only displayed 
+             when the mobile menu button above is clicked,
+             activating the javascript toggle function. @media style
+             displays the menu div in desktop-width browsers, however. -->
+        
+        <!-- ##################### MENU ##################### -->
+        
+        <div id="menu" class="toggle">
             <div class="container">
-                <ul><li id="here">Home</li><li><a href="page2.html">Our Story</a></li><li><a href="#">About</a></li><li><a href="#">Contact</a></li></ul>
-            </div><!--container-->
-        </div><!--horzmenu-->
-        <!-- ########################### CONTENT, including RESPONSIVE BOXES ################### -->
+                <ul>
+                    <li id="here">Home</li>
+                    <li><a href="#">Our Story</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- ##################### CONTENT ##################### -->
+        
         <div id="contentwrapper">
-            <div class="container">
-                <!-- ###### Content 1, placed first vertically (in mobile mode), or on the left (in desktop mode) -->
+            <div class="container">		
                 <p>This template is used to demonstrate a hand-built, responsive webpage that dynamically alters menus, layout, and content depending on the dimensions of the browser window.</p>
+                    
+                <!-- ###### Content 1, placed first vertically (in mobile mode), 
+                     or on the left (in desktop mode) -->
                 <div id="content1">		
                     <h2>Content 1</h2>
                     <p>This box is used for the primary content which will be displayed in all versions of the website. On a browser window that is wide enough, this box will be on the left, with the less important box <b>content2</b> placed on the right side of the browser window.</p>
@@ -68,25 +64,25 @@
                     </ol>
                     <p>To view how CSS alters the display of these files based on browser window width, load them into a web browser and then resize the window from wide to narrow and back.</p>
                 </div> <!--content1-->
-                <!-- ###### Content 2, placed second vertically (in mobile mode), or on the right (in desktop mode) --> 
-                <!-- This content may be supressed by including marking it up with the   class="mobile_hide"   tag for all or
-                     part of the content. -->
+                
+                <!-- ###### Content 2, placed second vertically (in mobile mode), 
+                     or on the right (in desktop mode) --> 
+                
                 <div id="content2">		
                     <h2>This is Content 2</h2>
                     <p>In this template, the <b>content2</b> div is placed on the right in the desktop version. When the window shrinks to a size that doesn't easily allow for the side-by-side placement of these two divs, <b>content2</b> is dropped down below <b>content1</b> in the viewport.</p>
-                    <p>There is also the option for removing content entirely from the mobile view by tagging a block, img, paragraph, etc, with the <pre>class="mobile_hide"</pre> class. In this example, there is an image that is displayed in the desktop view, but that image is not displayed in the mobile version.</p>
-                    <div class="mobile_hide">       <!-- This removes the picture from the mobile version, for example. -->
-                        <img src="image1.jpg" style="width: 100%" />
-                    </div>
-                </div>
+                    <img src="image1.jpg" styles="width: 100%;"  />
+                </div><!--content2-->
             </div><!--container-->
         </div><!--contentwrapper-->
-        <!-- ############################################# FOOTER ############################## -->
+        
+        <!-- ##################### FOOTER ##################### -->
+        
         <div id="footer">
             <div class="container">
-                <p>&copy; 2015, <a href="mailto:yourname@you.com">Your Name</a> |
+                <p>&copy;2018, <a href="mailto:yourname@you.com">Your Name</a> |
                   <a href="#">Terms of Service</a></p>
-            </div><!--container-->
+            </div>
         </div><!--footer-->
     </body>
 </html>

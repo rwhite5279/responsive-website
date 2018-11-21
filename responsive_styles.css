@@ -1,208 +1,191 @@
-/* 
-    These responsive styles are designed to demonstrate how a single CSS file can be used to alter
-    the display of information on a page viewed under multiple browser contexts.
-    
-    @author Richard White
-    @version 2015-07-04   
-*/
-
-body    {
-            margin: 0; 
-            border: 0; 
-            padding: 0; 
-            background: #fff;
-            font-family: Georgia, Times, serif;
-        }
-#header { 
-            margin: 0; 
-            border: 0; 
-            padding: 1em; 
-            background: #036; 
-            color: #fff;
-            text-align: center; 
-            overflow: auto; 
-        }
-
-#header h1  {
-                margin: 0;
-                padding: 0;
-            }
-
-/*
-    The default vertmenu is displayed on mobile devices when the user clicks on
-    the hamburger labelled "Menu", causes the vertmenu list to be displayed in
-    the viewport. This vertmenu is hidden in the desktop-dimensioned browswer
-    window as described below.
-*/
-#vertmenu   { 
-                margin: 0; 
-                border: 0; 
-                padding: 0; 
-                width: 100%; 
-                display: block; 
-                clear: both; 
-                font-family: Verdana, Helvetica, Arial, sans-serif;  
-                font-weight: bold; 
-                font-size: 80%;  
-            }
-#hamburger  {
-                margin: 0;
-                border: 0;
-                padding: 0; 
-                font-size: 150%;
-            }
-#vertmenu ul 
-            { 
-                margin: 0; 
-                border: 0; 
-                padding: 0; 
-                width: 100%; 
-            }
-#vertmenu li    {
-                margin: 0; 
-                border-style: solid; 
-                border-width: 1px 0 0 0; 
-                border-color: #fff; 
-                padding: 0; 
-                width: 100%; 
-                display: block; 
-                text-align: center; 
-                list-style-type: none; 
-                }
-#vertmenu li#here
-            {
-                padding: 10px 0;
-                color: #ccc;
-            }
-#vertmenu a:link, #vertmenu a:visited  /* for the Menu/hamburger icon */
-            {
-                margin: 0; 
-                border: 0; 
-                padding: 10px 0; 
-                display: block; 
-                text-decoration: none; 
-                color: #fff;
-            }
-#vertmenu li a:link, #vertmenu li a:visited 
-            { 
-                color: #333;
-                background: #ddd;  
-            }
-#vertmenu li a:hover, #vertmenu a:active 
-            {
-                background: #666; 
-                color: #ccc; 
-            }
-
-
-#horzmenu   { 
-                margin: 0; 
-                border: 0; 
-                padding: 0; 
-                background: #ccc; 
-                overflow: hidden; 
-                font-family: Verdana, Helvetica, Arial, sans-serif; 
-                font-weight: bold;
-                display: none; 
-            }            
-#horzmenu ul    {
-                    margin: 0 auto; 
+body            {
+                    margin: 0; 
                     border: 0; 
                     padding: 0; 
-                    list-style-type: none; 
+                    background: #ccc;
+                }
+        
+#header         { 
+                    margin: 0; 
+                    border: 0; 
+                    padding: 0 1em; 
+                    background: #036; 
+                    color: #fff; 
                     text-align: center; 
-                    width: 25em; 
+                    overflow: auto;  
                 }
-#horzmenu li    {  
-                    margin: 0 auto; 
-                    border: 0; 
-                    padding: 0; 
-                    float: left;
-                }
-#horzmenu li#here
-                {
-                    padding: 0.5em 1em;
-                    color: #000;
-                }
-#horzmenu a:link, #horzmenu a:visited 
+
+#mobile_menu_button 
                 { 
                     margin: 0; 
                     border: 0; 
-                    padding: 0.5em 1em; 
+                    padding: 1em 0 1em 0;  
+                    background: #69c; 
+                    color: #fff; 
+                    text-align: center; 
+                    overflow: auto; 
                     display: block; 
-                    color: #666; 
-                    text-decoration: none; 
                 }
-#horzmenu a:hover, #horzmenu a:active 
+#mobile_menu_button a:link, 
+#mobile_menu_button a:visited 
+                { 
+                    color: #fff; 
+                }
+
+#mobile_menu_button a:hover, 
+#mobile_menu_button a:active 
                 { 
                     color: #000; 
                 }
 
+        
+#menu           {
+                    margin:0; 
+                    border:0; 
+                    padding: 0; 
+                    width: 100%; 
+                    background: #69c; 
+                    display: none; 
+                    clear:both; 
+                    overflow: auto;
+                    font-weight: bold;
+                }
 
-/* 
-    The container class is used to limit the width of the content on the page to a maximum of
-    of 900px: white space is added to either side for browser windows that are wider than that.
-*/
-.container 
-            {
-                margin: auto; 
-                border: 0;
-                padding: 0 1em;
-                max-width: 900px; /* Padding will be added to sides as necessary */
-            } 
-
-#contentwrapper 
-            { 
-                overflow: auto; 
-            }
-/* 
-    Default content1 and content2 are for a mobile device, taking up the full 
-    width of the screen. We'll alter these values in the wide-screen media
-    query below.
-*/
-#content1, #content2
-            {   margin: 0; 
-                border: 0; 
-                padding: 0; 
-                float: left; 
-                width: 100%;  
-            }                     
-
-
-#footer     { 
-                margin: 0; 
-                border: 0; 
-                padding: 0 1em; 
-                background: #036; 
-                color: #fff; 
-                text-align: center; 
-                overflow: auto; 
-            }
-#footer a:link, #footer a:visited 
-            {
-                color: #fff;
-            }
-
-.mobile_hide  /* Used to supress the display of elements in the mobile version */
-            {
-                display: none;
-            }
-
-
-/*
-    These specification below are the ones with trigger alterations in display based on broswer width.
-    The defaults CSS-descriptions above are based on an assumed mobile, "vertically-prominent" display.
-    
-    This specification, then, describes how to alter those default display values for a wider (>= 600px)
-    display port.
-*/
+#menu ul        { 
+                    margin: 0; 
+                    border: 0; 
+                    padding: 0; 
+                    width: 100%; 
+                }
             
-/* desktop display, for large-width desktop-sized display, all the way down to 600px wide*/
+#menu li        {
+                    margin: 0; 
+                    border-style: solid; 
+                    border-width: 1px 0 0 0; 
+                    border-color: #fff; 
+                    padding: 0; 
+                    width: 100%; 
+                    display: block; 
+                    text-align: center; 
+                    list-style-type: none; 
+                    font-family: Verdana, Helvetica, Arial, sans-serif;  
+                }
+
+#menu li#here   {
+                    padding: 10px 0;
+                    color: #000;
+                    background: #ccc;
+                }
+#menu a:link, 
+#menu a:visited 
+                {
+                    margin: 0; 
+                    border: 0; 
+                    padding: 10px 0; 
+                    display: block; 
+                    text-decoration: none; 
+                    background: #69c; 
+                    color: #333;
+                }
+            
+#menu a:hover, 
+#menu a:active 
+                {
+                    background: #eee; 
+                    color: #999; 
+                }
+            
+#contentwrapper { 
+                    /* Default content1 and content2 are for a mobile device, */
+                    /* taking up the full width of the screen */
+                    overflow: auto; 
+                }
+
+#content1       { 
+                    margin: 0; 
+                    border: 0; 
+                    padding: 0 5%; 
+                    float: left; 
+                    width: 90%;  
+                }
+
+#content2       { 
+                    margin: 0; 
+                    border: 0; 
+                    padding: 0 5%; 
+                    float: left; 
+                    width: 90%; 
+                }
+
+#footer         { 
+                    margin: 0; 
+                    border: 0; 
+                    padding: 0 1em; 
+                    background: #036; 
+                    color: #fff; 
+                    text-align: center; 
+                    overflow: auto; 
+                }
+
+#footer a:link, 
+#footer a:visited 
+                { 
+                    color: #fff; 
+                }
+#footer a:hover, 
+#footer a:active 
+                { 
+                    color: #999; 
+                }
+                            
+.container      {
+                    /* Padding will be added to sides as necessary */
+                    margin: auto; 
+                    padding: 0 1em;
+                    max-width: 800px; 
+                } 
+
+img           {
+                    width: 100%;
+                }
+                
+/* desktop display, for large-width desktop-sized display, 
+   all the way down to 600px wide*/
 @media (min-width: 600px) { 
-    #vertmenu { display: none; }                /* removes vertical (mobile-version) menu */
-    #horzmenu { display: block; }               /* leaves horizontal menu in place */
-    #content1 { padding: 0 3% 0 0; width: 47%; } /* places two content containers side by side */
-    #content2 { padding: 0 0 3% 0; width: 47%; }
-    .mobile_hide { display: block; }            /* Allows the display of elements otherwise suppressed */
+    body        { 
+                    font-size: 110%; 
+                }
+    #header h1  {
+                    font-size: 180%; 
+                }
+    #mobile_menu_button {
+                    display: none; 
+                } 
+    #menu       {
+                    display: block; 
+                    width: 100%; 
+                    background: #69c; 
+                }
+    #menu li    {
+                    border-width: 0; 
+                    width: 25%; 
+                    float: left; }
+                          
+    #content1   {   
+                    /* places two content containers side by side */
+                    padding: 2%; 
+                    width: 46%; 
+                    float: left; 
+                } 
+    #content2   { 
+                    padding: 2%; 
+                    width: 46%; 
+                    float: left; 
+                }
+    .desktop_small { 
+                    margin: 1em; 
+                    padding: 0; 
+                    width: 30%; 
+                    float: right;  
+                }            
 }
-            
