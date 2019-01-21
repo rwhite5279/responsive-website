@@ -105,7 +105,7 @@ body            {
 #content1       { 
                     margin: 0; 
                     border: 0; 
-                    padding: 0 5%; 
+                    padding: 0;
                     float: left; 
                     width: 90%;  
                 }
@@ -113,7 +113,7 @@ body            {
 #content2       { 
                     margin: 0; 
                     border: 0; 
-                    padding: 0 5%; 
+                    padding: 0; 
                     float: left; 
                     width: 90%; 
                 }
@@ -171,17 +171,12 @@ img           {
                     width: 25%; 
                     float: left; }
                           
-    #content1   {   
+    #content1, #content2   {   
                     /* places two content containers side by side */
-                    padding: 2%; 
-                    width: 46%; 
+                    padding: 0 2% 0 0; 
+                    width: 48%; 
                     float: left; 
                 } 
-    #content2   { 
-                    padding: 2%; 
-                    width: 46%; 
-                    float: left; 
-                }
     .desktop_small { 
                     margin: 1em; 
                     padding: 0; 
