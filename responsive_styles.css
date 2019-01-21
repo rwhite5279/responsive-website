@@ -72,7 +72,7 @@ body            {
                 }
 
 #menu li#here   {
-                    padding: 10px 0;
+                    padding: 0.5em 0;
                     color: #000;
                     background: #ccc;
                 }
@@ -81,7 +81,7 @@ body            {
                 {
                     margin: 0; 
                     border: 0; 
-                    padding: 10px 0; 
+                    padding: 0.5em 0; 
                     display: block; 
                     text-decoration: none; 
                     background: #69c; 
@@ -99,6 +99,7 @@ body            {
                     /* Default content1 and content2 are for a mobile device, */
                     /* taking up the full width of the screen */
                     overflow: auto; 
+                    padding: 0 1em;
                 }
 
 #content1       { 
@@ -141,7 +142,7 @@ body            {
 .container      {
                     /* Padding will be added to sides as necessary */
                     margin: auto; 
-                    padding: 0 1em;
+
                     max-width: 800px; 
                 } 
 
@@ -162,8 +163,7 @@ img           {
                     display: none; 
                 } 
     #menu       {
-                    display: block; 
-                    width: 100%; 
+                    display: block;  
                     background: #69c; 
                 }
     #menu li    {
